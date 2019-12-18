@@ -6,7 +6,7 @@ set(CMAKE_C_STANDARD 11)
 set(CMAKE_BUILD_TYPE Debug)
 
 if (NOT ${APPLE})
-    message( FATAL_ERROR "OSX only" )
+    message( FATAL_ERROR "macOS only" )
 endif()
 
 if ("$ENV{BUILD_ARCH}")
@@ -57,6 +57,11 @@ elseif ("${BUILD_ARCH}" MATCHES "arm64")
 
         execute_process(COMMAND echo "Jailbreak!")
     endif()
+elseif ("${BUILD_ARCH}" MATCHES "arm64e")
+    set(CMAKE_OSX_SYSROOT "${SDK_ROOT}/iPhoneOS12.2.sdk")
+    set(CMAKE_OSX_ARCHITECTURES "${BUILD_ARCH}")
+
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DTARGET_OS_IPHONE=1")
 else ()
     link_directories(/usr/lib)
 endif ()

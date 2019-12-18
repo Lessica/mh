@@ -19,8 +19,10 @@ $ git clone https://github.com/sskaje/mh.git
 $ cd mh
 # prepare linenoise
 $ git submodule update --init --recursive
-# prepare iPhoneOS SDKs
-$ bash tools/download_sdks.sh
+# install coreutils
+brew install coreutils
+# install pyyaml
+$ pip install pyyaml
 # Prepare duktape
 $ bash tools/duktape_prepare.sh
 ```
@@ -29,13 +31,15 @@ $ bash tools/duktape_prepare.sh
 
 ```bash
 # Build for macOS
-$ bash build/build-osx.sh
-# Build for ARMv7 iDevices
+$ bash build/build-macos.sh
+# Build for armv7 iDevices
 $ bash build/build-ios-armv7.sh
-# Build for ARMv7s iDevices
+# Build for armv7s iDevices
 $ bash build/build-ios-armv7s.sh
-# Build for ARM64 iDevices, iOS 10.2
-$ bash build/build-ios-armv64.sh
+# Build for arm64 iDevices
+$ bash build/build-ios-arm64.sh
+# Build for arm64e iDevices
+$ bash build/build-ios-arm64e.sh
 # Build for deb package for all iOS device
 $ bash build/build-ios-deb.sh
 
@@ -59,7 +63,7 @@ $ sudo ./mh_cli
 
 ```
 # mh_cli -h
-MH: A Scriptable Memory Editor v0.2.0
+MH: A Scriptable Memory Editor v0.2-1
 Author: sskaje
 
 Command                                 Description

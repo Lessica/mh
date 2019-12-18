@@ -1,3 +1,6 @@
 [submodule "deps/linenoise"]
 	path = deps/linenoise
 	url = https://github.com/antirez/linenoise.git
+[submodule "SDKs"]
+	path = SDKs
+	url = git@github.com:Lessica/iPhoneOS-SDKs.git
