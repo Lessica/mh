@@ -1,5 +1,6 @@
 # MH
-A memory editor for iOS/macOS with JavaScript support
+
+A memory editor for iOS/macOS with JavaScript support.
 
 ## Requirement
 
@@ -14,13 +15,12 @@ A memory editor for iOS/macOS with JavaScript support
 
 ### Prepare
 
-```bash
-$ git clone https://github.com/sskaje/mh.git
-$ cd mh
+```shell script
+$ git clone https://github.com/sskaje/mh.git && cd mh
 # prepare linenoise
 $ git submodule update --init --recursive
 # install coreutils
-brew install coreutils
+$ brew install coreutils
 # install pyyaml
 $ pip install pyyaml
 # Prepare duktape
@@ -29,7 +29,7 @@ $ bash tools/duktape_prepare.sh
 
 ### Build
 
-```bash
+```shell script
 # Build for macOS
 $ bash build/build-macos.sh
 # Build for armv7 iDevices
@@ -47,15 +47,13 @@ $ bash build/build-ios-deb.sh
 
 ### Run
 
-```bash
+```shell script
 $ sudo ./mh_cli
 ```
 
->
-> For iOS 11.x by Electra, binary must locates /bin/mh_cli
->
-> Read more: [Run HelloWorld on Jailbroken iOS 11](https://sskaje.me/2018/03/run-helloworld-on-jailbroken-ios-11/)
->
+For iOS 11.x by Electra, binary must locates /bin/mh_cli
+
+Read more: [Run HelloWorld on Jailbroken iOS 11](https://sskaje.me/2018/03/run-helloworld-on-jailbroken-ios-11/)
 
 ## Documentation
 
@@ -127,7 +125,7 @@ MH[379] > result
 
 ### Non-interactive Script Host
 
-```
+```shell script
 mh_script path/to/script.js [args [...]]
 ```
 
